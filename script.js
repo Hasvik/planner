@@ -1,10 +1,7 @@
 let money = prompt("Ваш бюджет на месяц?");
     time = prompt("Введите дату в формате YYYY-MM-DD", new Date().toISOString().slice(0, 10));
-    expenseItem1 = prompt("Введите обязательную статью расходов в этом месяце");
-    cost1 = prompt("В какую сумму обойдется");
-    expenseItem2 = prompt("Введите обязательную статью расходов в этом месяце");
-    cost2 = prompt("В какую сумму обойдется");
-let appData = {
+
+    let appData = {
     budget: money,
     timeData: time,
     expenses: {},
@@ -12,6 +9,17 @@ let appData = {
     income: [],
     savings: false
 };
-appData.expenses.expenseItem1 = cost1;
-appData.expenses.expenseItem2 = cost2;
+
+for (let i = 0; i < 2; i++) {
+    let a = prompt("Введите обязательную статью расходов в этом месяце", ""),
+        b = prompt("В какую сумму обойдется", "");
+    if ( (typeof(a)) === 'string' && (typeof(b)) === 'number' && (typeof(a)) != null && (typeof(b)) != null &&
+    a != '' && b != '' && a.length < 50) {
+        appData.expenses[a] = b;
+    } else {
+        
+    }
+    
+}
+
 alert("Ваш бюджет на сегодня: " + appData.budget/30);
