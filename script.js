@@ -10,7 +10,7 @@ let money = +prompt("Ваш бюджет на месяц?");
     savings: false
 };
 
-/*for (let i = 0; i < 2; i++) {
+for (let i = 0; i < 2; i++) {
     let a = prompt("Введите обязательную статью расходов в этом месяце", ""),
         b = prompt("В какую сумму обойдется", "");
     if ( (typeof(a)) === 'string' && (typeof(a)) != null && (typeof(b)) != null &&
@@ -20,7 +20,7 @@ let money = +prompt("Ваш бюджет на месяц?");
         alert("Ошибка ввода данных, попробуйте снова!");
         i = i - 1;
     }
-};*/
+};
 
 /*let i = 0;
 while (i < 2) {
@@ -35,6 +35,21 @@ while (i < 2) {
         i = i - 1;
     }
 };*/
+
+/*let i = 0;
+do {
+    i++;
+    let a = prompt("Введите обязательную статью расходов в этом месяце", ""),
+        b = prompt("В какую сумму обойдется", "");
+    if ( (typeof(a)) === 'string' && (typeof(a)) != null && (typeof(b)) != null &&
+    a != '' && b != '' && a.length < 50) {
+        appData.expenses[a] = b;
+    } else {
+        alert("Ошибка ввода данных, попробуйте снова!");
+        i = i - 1;
+    };
+}
+while (i < 2);*/
 
 appData.moneyPerDay = appData.budget / 30;
 
