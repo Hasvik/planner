@@ -64,10 +64,14 @@ do {
 }
 while (i < 2);*/
 
-appData.moneyPerDay = (appData.budget / 30).toFixed();
+function detectDayBudget() {
+    appData.moneyPerDay = (appData.budget / 30).toFixed();
+    alert("Ваш бюджет на сегодня: " + appData.moneyPerDay);
+}
 
-alert("Ваш бюджет на сегодня: " + appData.moneyPerDay);
+detectDayBudget();
 
+function 
 if (appData.moneyPerDay < 200) {
     console.log("Низкий уровень достатка");
 } else if (appData.moneyPerDay > 100 && appData.moneyPerDay < 2000) {
@@ -89,3 +93,7 @@ function checkSavings() {
 }
 
 checkSavings();
+
+function detectDayBudget() {
+
+}
