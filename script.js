@@ -100,10 +100,14 @@ checkSavings();
 function chooseOptExpenses() {
     for (let i = 0; i < 3; i++) {
         let a = prompt("Статья необязательных расходов?", "");
-        if ( (typeof(a)) === 'string' && (typeof(a)) != null && (typeof(b)) != null &&
-        a != '' && b != '' && a.length < 50) {
-            appData.expenses[a] = b;
+        let b = i + 1;
+        if ( (typeof(a)) === 'string' && (typeof(a)) != null && a != '' && a.length < 50) {
+            appData.optionalExpenses[b] = a;
         } else {
             alert("Ошибка ввода данных, попробуйте снова!");
             i = i - 1;
+        }
+    }
 }
+
+chooseOptExpenses();
