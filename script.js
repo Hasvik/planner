@@ -5,7 +5,7 @@ function start() {
     time = prompt("Введите дату в формате YYYY-MM-DD", new Date().toISOString().slice(0, 10));
 
     while(isNaN(money) || money == "" || money == null) {
-        alert("Введено не числовое значение в строке бюджета, попробуйте снова")
+        alert("Введено не числовое значение в строке бюджета, попробуйте снова");
         money = +prompt("Ваш бюджет на месяц?", '');
     }
 }
@@ -70,5 +70,7 @@ start();
     chooseIncome: function() {
         let items = prompt ('Что принесет дополнительный доход? (введите данные через запятую)', '');
         appData.income = items.split(', ');
+        appData.income.push(prompt('Может еще где-то заработаешь?'));
+        appData.income.sort();
     }
 };
