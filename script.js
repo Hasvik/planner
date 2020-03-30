@@ -58,9 +58,8 @@ start();
     chooseOptExpenses: function() {
         for (let i = 0; i < 3; i++) {
             let a = prompt("Статья необязательных расходов?", "");
-            if ( (typeof(a)) === 'string' && (typeof(a)) != null && (typeof(b)) != null &&
-            a != '' && b != '' && a.length < 50) {
-                appData.expenses[a] = b;
+            if ( (typeof(a)) === 'string' && (typeof(a)) != null && a != '' && a.length < 50) {
+                appData.optionalExpenses = a;
             } else {
                 alert("Ошибка ввода данных, попробуйте снова!");
                 i = i - 1;
@@ -69,6 +68,10 @@ start();
     },
     chooseIncome: function() {
         let items = prompt ('Что принесет дополнительный доход? (введите данные через запятую)', '');
+            if ( (typeof(items)) === 'string' && (typeof(items)) != null && items != '' && items.length < 50) {
+                appData.income = items;
+            }
+            
         appData.income = items.split(', ');
         appData.income.push(prompt('Может еще где-то заработаешь?'));
         appData.income.sort();
